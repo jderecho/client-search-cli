@@ -8,10 +8,10 @@ A minimalist command-line application to search clients by name and detect dupli
 
 ## Installation
 1. Clone the repository:
-```sh
-   git clone https://github.com/johnderecho/client-search-cli.git
-   cd client-search-cli
-```
+   ```sh
+    git clone git@github.com:jderecho/client-search-cli.git
+    cd client-search-cli
+   ```
 
 2. Install dependencies using Bundler:
 ```sh
@@ -39,5 +39,6 @@ rspec client_search_spec.rb
 ```
 
 ## Assumptions
+- Assuming your local device has an SSH access to public github repositories
 - Assuming that clients.json or any future JSON files are stored locally.
 - The CLI expects valid JSON input; malformed JSON files will not be handled explicitly.

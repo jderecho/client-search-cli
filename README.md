@@ -25,7 +25,7 @@ Run the script with the following commands:
 Search through all clients and return those with names partially matching a given search query
 
 ```sh
-syntax: ruby app.rb find_duplicates FIELD
+syntax: ruby app.rb search FIELD SEARCH_TERM
 
 e.g.
 ruby app.rb search full_name jane
@@ -80,9 +80,11 @@ To run RSpec tests, use:
 ### How you would enhance or refactor the architecture
 - Database Implementation: The choice depends on the expected data size, number of users, and the need for flexibility. I would likely choose PostgreSQL, MongoDB, or SQLite based on those factors.
 - Model & Database Connection: Depending on the chosen database, I would leverage existing gems such as Sequel, ActiveRecord, or ROM-RB to handle the connection and data modeling.
+- If I have more time, I would move both the validation and the logic from the command classes (search, find_duplicate) into a single action service class.
 
 
-### Features or improvements you would prioritise next
+### Features or improvements you would prioritize next
 - Allow an option to import json files from a remote source.
 - Handle the importation of json data to a database and implement model and database connection.
 - Expose RESTful endpoints using a lightweight framework like Sinatra
+- Add Logging capability

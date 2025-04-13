@@ -7,16 +7,16 @@ module Controllers
       aliases: '-f', default: DEFAULT_CLIENT_JSON_PATH, desc: 'Url or path to the file'
     }.freeze
 
-    desc 'search FIELD QUERY', 'search for a client by FIELD and QUERY'
+    desc 'search FIELD SEARCH_TERM', 'search for a client by FIELD and SEARCH_TERM'
     method_option :file, **DEFAULT_FILE_OPTIONS
-    def search(field, query)
-      render Services::Search.new(@clients, field, query).perform
+    def search(field, search_term)
+      render Commands::Search.perform(@clients, field, search_term)
     end
 
     desc 'find_duplicates FIELD', 'find duplicates by FIELD'
     method_option :file, **DEFAULT_FILE_OPTIONS
     def find_duplicates(field)
-      render Services::FindDuplicate.new(@clients, field).perform
+      render Commands::FindDuplicates.perform(@clients, field)
     end
 
     no_commands do

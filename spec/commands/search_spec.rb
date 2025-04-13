@@ -2,7 +2,7 @@
 
 require_relative '../spec_helper'
 
-describe Services::Search do
+describe Commands::Search do
   subject { described_class.new(clients, field, search_term) }
   let(:clients) { JSON.parse(load_json_fixture(json_file).to_json, symbolize_names: true) }
   let(:json_file) { 'spec/fixtures/data/test_clients.json' }

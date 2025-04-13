@@ -2,7 +2,7 @@
 
 require_relative '../spec_helper'
 
-RSpec.describe Services::FindDuplicate do
+RSpec.describe Commands::FindDuplicates do
   let(:json_file) { 'spec/fixtures/data/test_clients.json' }
   let(:data) { JSON.parse(load_json_fixture(json_file).to_json, symbolize_names: true) }
   subject { described_class.new(data, field) }

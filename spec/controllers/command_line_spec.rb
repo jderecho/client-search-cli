@@ -28,7 +28,7 @@ RSpec.describe Controllers::CommandLine do
     context 'when search term is not provided' do
       it 'prints error message' do
         error = "ERROR: \"rspec search\" was called with arguments [\"full_name\"]\n"
-        usage = "Usage: \"rspec search FIELD QUERY\"\n"
+        usage = "Usage: \"rspec search FIELD SEARCH_TERM\"\n"
 
         expect do
           described_class.start(%w[search full_name])
@@ -47,7 +47,7 @@ RSpec.describe Controllers::CommandLine do
     context 'when field is not provided' do
       it 'prints error message' do
         error = "ERROR: \"rspec search\" was called with no arguments\n"
-        usage = "Usage: \"rspec search FIELD QUERY\"\n"
+        usage = "Usage: \"rspec search FIELD SEARCH_TERM\"\n"
 
         expect do
           described_class.start(%w[search])

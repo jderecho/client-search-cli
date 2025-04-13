@@ -1,8 +1,16 @@
 # frozen_string_literal: true
 
-module Services
+module Commands
   # This class is responsible for finding duplicate clients in an array of clients based on a specified field.
-  class FindDuplicate
+  class FindDuplicates
+    def self.perform(records, field)
+      new(records, field).perform
+    end
+
+    # @param records [Array<Hash>] The array of clients to check for duplicates.
+    # @param field [String] The field to check for duplicates (e.g., 'email', 'full_name').
+    # @raise [ArgumentError] if the field is not valid
+
     # @param records [Array<Hash>] The array of clients to check for duplicates.
     # @param field [String] The field to check for duplicates (e.g., 'email', 'full_name').
     def initialize(records, field)

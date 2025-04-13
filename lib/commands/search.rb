@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
-module Services
+module Commands
   # This class is responsible for searching for clients in an Array based on a specified field.
   class Search
+    def self.perform(clients, field, search_term)
+      new(clients, field, search_term).perform
+    end
+
     # @param clients [Array<Hash>] The array of clients to search.
     # @param field [String] The field to search for (e.g., 'email', 'full_name').
     # @param search_term [String] The term to search for in the specified field.

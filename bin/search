@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+system("ruby app.rb search full_name #{ARGV[0]}")

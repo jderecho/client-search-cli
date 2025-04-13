@@ -59,7 +59,7 @@ To run RSpec tests, use:
   ```
     { "duplicated_value" : [duplicated_hashes] }
   ```
-- Assumes the return value is an empty hash when there is no duplicates are found during the `find_duplicates` operation
+- Assumes that the return value is an empty hash when no duplicates are found during the `find_duplicates` operation.
 - Assumes that during a search operation, the search term can be a string or number.
 - The search operation is performed in a case-insensitive manner.
 - Assumes that the client hash contains known and static keys. I've added a validation to ensure the keys are recognized and valid.

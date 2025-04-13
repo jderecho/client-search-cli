@@ -8,16 +8,16 @@ A minimalist command-line application to search clients by name and detect dupli
 
 ### Installation
 1. Clone the repository:
-   ```sh
-    git clone git@github.com:jderecho/client-search-cli.git
-    cd client-search-cli
-   ```
+```sh
+git clone git@github.com:jderecho/client-search-cli.git
+cd client-search-cli
+```
 
 2. Install dependencies using Bundler:
-   ```sh
-    gem install bundler
-    bundle install
-   ```
+```sh
+gem install bundler
+bundle install
+```
 
 ### Usage
 Run the script with the following commands:
@@ -49,7 +49,7 @@ minimalist version
 ### Running Tests
 To run RSpec tests, use:
 ```sh
-  rspec .
+rspec .
 ```
 
 ### Assumptions
@@ -57,7 +57,7 @@ To run RSpec tests, use:
 - We want to print the error message if it occurs during the cli operations.
 - The `find_duplicates` action returns all duplicates in a hash in these format:
   ```
-    { "duplicated_value" : [duplicated_hashes] }
+  { "duplicated_value" : [duplicated_hashes] }
   ```
 - Assumes that the return value is an empty hash when no duplicates are found during the `find_duplicates` operation.
 - Assumes that during a search operation, the search term can be a string or number.
@@ -80,8 +80,7 @@ To run RSpec tests, use:
 ### How you would enhance or refactor the architecture
 - Database Implementation: The choice depends on the expected data size, number of users, and the need for flexibility. I would likely choose PostgreSQL, MongoDB, or SQLite based on those factors.
 - Model & Database Connection: Depending on the chosen database, I would leverage existing gems such as Sequel, ActiveRecord, or ROM-RB to handle the connection and data modeling.
-- If I have more time, I would move both the validation and the logic from the command classes (search, find_duplicate) into a single action service class.
-
+- If I have more time, I would move both the validation and the logic from the command classes (search.rb, find_duplicate.rb) into a single action service class.
 
 ### Features or improvements you would prioritize next
 - Allow an option to import json files from a remote source.
